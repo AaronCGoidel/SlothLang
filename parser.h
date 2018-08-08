@@ -1,9 +1,8 @@
-#include "c0vm.h"
+#include "slothvm.h"
 
-#ifndef _H_READ_PROGRAM
-#define _H_READ_PROGRAM
+#ifndef _PARSER_H_
+#define _PARSER_H_
 
-struct bc0_file* read_program(string filename);
-void free_program(struct bc0_file *program);
+struct sloth_program* parse(char* filename);
 
-#endif // _H_READ_PROGRAM
+#endif

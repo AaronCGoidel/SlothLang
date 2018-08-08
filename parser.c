@@ -25,9 +25,9 @@ struct sloth_program* parse(char* filepath){
   }
 
   int numCodes = progLen(sFile);
-  char* byteCode = malloc(sizeof(char) * numCodes);
+  ubyte* byteCode = malloc(sizeof(char) * numCodes);
 
-	char c;
+	char c = '\0';
   int count = 0;
   char cmd[6];
   size_t codeNum = 0;
@@ -44,7 +44,7 @@ struct sloth_program* parse(char* filepath){
         codeNum++;
         currentCode = 0x00;
       }else if(strcmp(cmd, "climb") == 0){
-        byteCode[codeNum] = 0xAA;
+        byteCode[codeNum] = 0x0A;
         codeNum++;
       }else if(strcmp(cmd, "nap") == 0){
         currentCode = 0x00;
