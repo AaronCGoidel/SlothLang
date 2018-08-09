@@ -148,7 +148,8 @@ int execute(struct sloth_program* sbin){
       case GOTO: {
         pc++;
         if(spop(S)){
-          pc += P[pc];
+          printf("here");
+          pc = P[pc];
         }else{
           pc++;
         }
@@ -168,11 +169,6 @@ int execute(struct sloth_program* sbin){
         spush(S, x);
 
         pc++;
-        break;
-      }
-      case JUMP: {
-        int offset = spop(S);
-        pc += offset;
         break;
       }
       default: {

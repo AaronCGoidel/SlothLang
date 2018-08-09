@@ -14,8 +14,7 @@ enum opcodes {
   INP   = 0x07,
   OUT   = 0x08,
   GOTO  = 0x09,
-  JUMP  = 0x0A,
-  DUP   = 0x0B
+  DUP   = 0x0A
 };
 
 enum compCodes {
