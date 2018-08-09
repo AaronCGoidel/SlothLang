@@ -116,6 +116,7 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 | Byte Code | Name |
 |-----------|-------------|
 | `0x00` | Exit |
+| `0x01` | Push \<i> |
 | `0x02` | Add |
 | `0x03` | Subtract |
 | `0x04` | Multiply |
@@ -124,7 +125,7 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 | `0x07` | Input \<t> |
 | `0x08` | Output \<t> |
 | `0x09` | GOTO \<o> |
-| `0x0A` | Push \<i> |
+
 
    [slgit]: <https://github.com/AaronCGoidel/SlothLang>
    
