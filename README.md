@@ -89,7 +89,7 @@ The **GOTO** instruction takes a number of sloths as the destination if the resu
 
 ### Duplicate
   
-**Syntax:** `sloth * 11`  
+**Syntax:** `sloth * 10`  
 **Effect:** pops an element off the stack and pushes it twice.  
 **Stack:** `S, x -> S, x, x`  
 

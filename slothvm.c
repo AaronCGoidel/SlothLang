@@ -148,7 +148,6 @@ int execute(struct sloth_program* sbin){
       case GOTO: {
         pc++;
         if(spop(S)){
-          printf("here");
           pc = P[pc];
         }else{
           pc++;

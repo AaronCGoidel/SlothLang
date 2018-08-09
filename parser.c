@@ -61,7 +61,11 @@ struct sloth_program* parse(char* filepath){
         currentCode = 0;
       }
       count = 0;
-		}else{
+		}else if (c == '#'){
+      while(c != '\n'){
+        c = fgetc(sFile);
+      }
+    }else{
 			cmd[count] = c;
       count++;
 		}
