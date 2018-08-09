@@ -5,6 +5,7 @@
 
 enum opcodes {
   EXIT  = 0x00,
+  PUSH  = 0x01,
   ADD   = 0x02, 
   SUB   = 0x03, 
   MULT  = 0x04, 
@@ -12,8 +13,7 @@ enum opcodes {
   COMP  = 0x06,
   INP  = 0x07,
   OUT  = 0x08,
-  GOTO  = 0x09,
-  PUSH  = 0x0A
+  GOTO  = 0x09
 };
 
 enum compCodes {

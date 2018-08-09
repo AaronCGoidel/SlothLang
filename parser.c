@@ -43,8 +43,8 @@ struct sloth_program* parse(char* filepath){
         byteCode[codeNum] = currentCode;
         codeNum++;
         currentCode = 0x00;
-      }else if(strcmp(cmd, "climb") == 0){
-        byteCode[codeNum] = 0x0A;
+      }else if(strcmp(cmd, "slothy") == 0){
+        byteCode[codeNum] = 0x01;
         codeNum++;
       }else if(strcmp(cmd, "nap") == 0){
         currentCode = 0x00;
