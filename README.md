@@ -80,12 +80,26 @@ The **GOTO** instruction takes a number of sloths as the offset if the result is
 **Effect:** pops the top value off the stack, if the value is 1, the program counter is increased by the offset, else continues as normal.  
 **Stack:** `S, x -> S`  
 
+### Jump
+  
+**Syntax:** `sloth * 10`  
+The **Jump** instruction is the same as the **GOTO** instruction except the offset is popped off the stack.
+
+**Effect:** pops the top two values off the stack, if the second value is 1, the program counter is increased by the first popped value, else continues as normal.  
+**Stack:** `S, x, y -> S`  
+
 ### Push \<i>
   
 **Syntax:** `slothy sloth * i`  
 **Effect:** pushes the integer value of the number of sloths following slothy onto the stack.  
 **Stack:** `S -> S, x`  
 **Example:** `slothy sloth sloth sloth` pushes 3 onto the stack.  
+
+### Duplicate
+  
+**Syntax:** `sloth * 11`  
+**Effect:** pops an element off the stack and pushes it twice.  
+**Stack:** `S, x -> S, x, x`  
 
 ## Operation, Comparison, and Type Codes
 SlothLang relies on the translation of a number of sloths to a numeric code in order to perform specific operations. 
@@ -125,6 +139,8 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 | `0x07` | Input \<t> |
 | `0x08` | Output \<t> |
 | `0x09` | GOTO \<o> |
+| `0x0A` | JUMP |
+| `0x0B` | DUP |
 
 
    [slgit]: <https://github.com/AaronCGoidel/SlothLang>

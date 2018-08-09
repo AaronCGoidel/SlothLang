@@ -162,6 +162,19 @@ int execute(struct sloth_program* sbin){
         pc++;
         break;
       }
+      case DUP: {
+        int x = spop(S);
+        spush(S, x);
+        spush(S, x);
+
+        pc++;
+        break;
+      }
+      case JUMP: {
+        int offset = spop(S);
+        pc += offset;
+        break;
+      }
       default: {
         opErr("operation", P[pc]);
       }

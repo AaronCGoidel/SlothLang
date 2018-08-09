@@ -11,9 +11,11 @@ enum opcodes {
   MULT  = 0x04, 
   DIV   = 0x05, 
   COMP  = 0x06,
-  INP  = 0x07,
-  OUT  = 0x08,
-  GOTO  = 0x09
+  INP   = 0x07,
+  OUT   = 0x08,
+  GOTO  = 0x09,
+  JUMP  = 0x0A,
+  DUP   = 0x0B
 };
 
 enum compCodes {
