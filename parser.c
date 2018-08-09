@@ -15,6 +15,11 @@ int progLen(FILE* f){
   return count * 3;
 }
 
+void freeProgram(struct sloth_program* P){
+  free(P->codes);
+  free(P);
+}
+
 struct sloth_program* parse(char* filepath){
   FILE* sFile;
 

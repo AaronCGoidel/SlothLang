@@ -11,5 +11,6 @@ int main(int argc, char **argv){
   struct sloth_program* program = parse(fileName);
   int x = execute(program);
   printf("%d\n", x);
+  freeProgram(program);
   return 0;
 }
