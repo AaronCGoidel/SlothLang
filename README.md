@@ -1,4 +1,5 @@
-# SlothLang
+![SlothLang][logo] 
+# SlothLang 
 
 SlothLang is an esoteric programming language by Aaron Goidel
 
@@ -135,4 +136,7 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 
 
    [slgit]: <https://github.com/AaronCGoidel/SlothLang>
+   [logo]: SlothLogo.png
+ "Sloth Logo"
+
    
