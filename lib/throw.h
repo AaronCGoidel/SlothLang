@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
+#include <stdint.h>
 
 #ifndef _THROW_H_
 #define _THROW_H_
