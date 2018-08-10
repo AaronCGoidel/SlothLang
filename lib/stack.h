@@ -10,6 +10,10 @@ sstack_t sstack_new();
 
 void spush(sstack_t S, int x);
 
+bool sstack_empty(sstack_t S);
+
+void sprinter(sstack_t S);
+
 int spop(sstack_t S);
 
 void sstack_free(sstack_t S);

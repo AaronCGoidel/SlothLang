@@ -15,6 +15,10 @@ int execute(struct sloth_program* sbin){
   while(run){
     switch(P[pc]){
       case EXIT: {
+        if(sstack_empty(S)){
+          sstack_free(S);
+          return 0;
+        }
         int x = spop(S);
         sstack_free(S);
         return x;
@@ -147,7 +151,7 @@ int execute(struct sloth_program* sbin){
       }
       case GOTO: {
         pc++;
-        if(spop(S)){
+        if(spop(S) == 1){
           pc = P[pc];
         }else{
           pc++;

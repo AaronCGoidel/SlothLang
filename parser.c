@@ -40,7 +40,12 @@ struct sloth_program* parse(char* filepath){
 
 	while(c != -1){
     c = fgetc(sFile);
-		if(c == ' ' || c == '\n' || c == -1){
+    if(c == '#'){
+      while(c != '\n'){
+        c = fgetc(sFile);
+      }
+      fseek(sFile, -1, SEEK_CUR);
+    }else if(c == ' ' || c == '\n' || c == -1){
       cmd[count] = '\0';
 			if(strcmp(cmd, "sloth") == 0){
         currentCode++;
@@ -61,11 +66,7 @@ struct sloth_program* parse(char* filepath){
         currentCode = 0;
       }
       count = 0;
-		}else if (c == '#'){
-      while(c != '\n'){
-        c = fgetc(sFile);
-      }
-    }else{
+		}else{
 			cmd[count] = c;
       count++;
 		}

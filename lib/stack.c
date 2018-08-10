@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "stack.h"
 
 typedef struct list_node list;
@@ -13,6 +14,10 @@ struct stack_header{
   list* top;
   list* bottom;
 };
+
+bool sstack_empty(stack* S){
+  return S->top == S->bottom;
+}
 
 stack* sstack_new(){
   stack* S = malloc(sizeof(stack));
@@ -31,7 +36,7 @@ void spush(stack* S, int x){
   S->top = p;
 }
 
-int spop(stack* S) {
+int spop(stack* S){
   int x = S->top->data;
   list* q = S->top;
   S->top = S->top->next;

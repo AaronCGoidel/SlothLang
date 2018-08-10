@@ -135,8 +135,10 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 | `0x0A` | DUP |
 
 
+### Thanks To
+ - Mariana Ortiz Luna for the awesome logo
+
    [slgit]: <https://github.com/AaronCGoidel/SlothLang>
    [logo]: SlothLogo.png
- "Sloth Logo"
+ "Sloth Logo by Mariana Ortiz Luna "
 
-   
