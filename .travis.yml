@@ -6,3 +6,4 @@ os:
 
 script:
 - make sloth
+- ./sloth Examples/HelloWorld.sloth
