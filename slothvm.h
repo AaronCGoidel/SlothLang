@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 
 #ifndef _SLOTHVM_H_
 #define _SLOTHVM_H_
