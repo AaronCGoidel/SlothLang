@@ -72,9 +72,6 @@ struct sloth_program* parse(char* filepath){
 		}
 	}
 
-  // for(int i = 0; i < numCodes; i++){
-  //   printf("%02x\n", byteCode[i]);
-  // }
   struct sloth_program* S = malloc(sizeof(struct sloth_program));
   S->codes = byteCode;
   return S;

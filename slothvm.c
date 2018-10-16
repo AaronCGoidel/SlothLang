@@ -13,6 +13,7 @@ int execute(struct sloth_program* sbin){
 
   bool run = true;
   while(run){
+    // sprint(S);
     switch(P[pc]){
       case EXIT: {
         if(sstack_empty(S)){
@@ -156,7 +157,6 @@ int execute(struct sloth_program* sbin){
         }else{
           pc++;
         }
-
         break;
       }
       case PUSH: {

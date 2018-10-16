@@ -10,7 +10,7 @@ int main(int argc, char **argv){
   char* fileName = argv[1];
   struct sloth_program* program = parse(fileName);
   int x = execute(program);
-  printf("%d\n", x);
+  printf("\n%d\n", x);
   freeProgram(program);
   return 0;
 }
