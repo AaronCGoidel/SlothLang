@@ -5,5 +5,8 @@ os:
 - osx
 
 script:
+- make test
+- ./slothTest
+- make cleanTest
 - make sloth
 - ./sloth Examples/HelloWorld.sloth
