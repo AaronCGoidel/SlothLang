@@ -1,5 +1,6 @@
 ![SlothLang][logo] 
 # SlothLang 
+[![Build Status](https://travis-ci.com/AaronCGoidel/SlothLang.svg?branch=master)](https://travis-ci.com/AaronCGoidel/SlothLang)
 
 SlothLang is an esoteric programming language by Aaron Goidel
 
