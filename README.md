@@ -1,6 +1,7 @@
 ![SlothLang][logo] 
 # SlothLang 
-[![Build Status](https://travis-ci.com/AaronCGoidel/SlothLang.svg?branch=master)](https://travis-ci.com/AaronCGoidel/SlothLang)
+[![Build Status](https://travis-ci.com/AaronCGoidel/SlothLang.svg?branch=master)](https://travis-ci.com/AaronCGoidel/SlothLang) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 
 SlothLang is an esoteric programming language by Aaron Goidel
 
@@ -135,6 +136,9 @@ Sloth code is read in by the SlothVM as bytecode. The following is the bytecode 
 | `0x09` | GOTO \<o> |
 | `0x0A` | DUP |
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ### Thanks To
  - Mariana Ortiz Luna for the awesome logo
