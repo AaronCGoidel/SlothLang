@@ -1,16 +1,16 @@
-slothy sloth # push 1
-sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth # dup (loop point)
-sloth sloth sloth sloth sloth sloth sloth sloth and sloth # out int
-slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth # push 10
-sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth # out \n
-slothy sloth # push 1
-sloth sloth # add
-sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth # dup
-slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth # push 11
-sloth sloth sloth # subtract
-slothy sloth # push 1
-slothy sloth # push 1
-sloth sloth sloth # subtract to get 0
-sloth sloth sloth sloth sloth sloth and sloth sloth sloth # is x < 0
-sloth sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth # if yes go to loop point
-nap
+slothy sloth                                                             # push 1
+sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth              # dup (loop point)
+	sloth sloth sloth sloth sloth sloth sloth sloth and sloth                # out int
+	slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth       # push 10
+	sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth          # out \n
+	slothy sloth                                                             # push 1
+	sloth sloth                                                              # add
+	sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth              # dup
+	slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth # push 11
+	sloth sloth sloth                                                        # subtract
+	slothy sloth                                                             # push 1
+	slothy sloth                                                             # push 1
+	sloth sloth sloth                                                        # subtract to get 0
+	sloth sloth sloth sloth sloth sloth and sloth sloth sloth                # is x < 0
+	sloth sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth    # if yes go to loop point
+	nap                                                                      # end.
