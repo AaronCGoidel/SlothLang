@@ -46,7 +46,7 @@ To save time and effort, there are a few commands which do not follow the scheme
 
 ### Divide
 **Syntax:** `sloth * 5`  
-**Effect:** pops the first two values off the stack and pushes result of division.  
+**Effect:** pops the first two values off the stack and pushes their quotient.  
 **Stack:** `S, x, y -> S, x/y`  
 **NOTE:** Division in SlothLang is integer division, meaning divide will always round fractions down. e.g. 3/2 = 1
 
