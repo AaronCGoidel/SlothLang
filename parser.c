@@ -32,13 +32,13 @@ struct sloth_program* parse(char* filepath){
   int numCodes = progLen(sFile);
   ubyte* byteCode = malloc(sizeof(char) * numCodes);
 
-	char c = '\0';
+  char c = '\0';
   int count = 0;
   char cmd[6];
   size_t codeNum = 0;
   unsigned char currentCode = 0;
 
-	while(c != -1){
+  while(c != -1){
     c = fgetc(sFile);
     if(c == '#'){
       while(c != '\n'){
@@ -47,7 +47,7 @@ struct sloth_program* parse(char* filepath){
       fseek(sFile, -1, SEEK_CUR);
     }else if(c == ' ' || c == '\n' || c == -1){
       cmd[count] = '\0';
-			if(strcmp(cmd, "sloth") == 0){
+      if(strcmp(cmd, "sloth") == 0){
         currentCode++;
       }else if(strcmp(cmd, "and") == 0){
         byteCode[codeNum] = currentCode;
@@ -66,11 +66,11 @@ struct sloth_program* parse(char* filepath){
         currentCode = 0;
       }
       count = 0;
-		}else{
-			cmd[count] = c;
+    }else{
+      cmd[count] = c;
       count++;
-		}
-	}
+    }
+  }
   // for(int i = 0; i < numCodes; i++){
   //   printf("%x\n", byteCode[i]);
   // }
