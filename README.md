@@ -17,11 +17,11 @@ SlothLang is parsed and executed in C.
 And of course the code behind the SlothLang VM itself is open source and can be found on [GitHub][slgit].
 
 ## Usage
-A Sloth program is parsed in new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurance of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
+A Sloth program is parsed in new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurrence of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
 
 Since a Sloth command is generally based on the number of times the word sloth appears in a row, the syntax will be documented as a multiplication. For example the documentation `sloth * 3` means `sloth sloth sloth` in Sloth code.
 
-To save time and effort, there are a few commands which do not follow the scheme outlined above. These will be outlined below. Note: the `and` operator is used to separate arguements.
+To save time and effort, there are a few commands which do not follow the scheme outlined above. These will be outlined below. Note: the `and` operator is used to separate arguments.
 
 # Syntax and Effects
 ### Exit
@@ -46,14 +46,15 @@ To save time and effort, there are a few commands which do not follow the scheme
 
 ### Divide
 **Syntax:** `sloth * 5`  
-**Effect:** pops the first two values off the stack and pushes their quotient.  
+**Effect:** pops the first two values off the stack and pushes result of division.  
 **Stack:** `S, x, y -> S, x/y`  
 **NOTE:** Division in SlothLang is integer division, meaning divide will always round fractions down. e.g. 3/2 = 1
 
 ### Compare \<c>
   
 **Syntax:** `sloth * 6 and sloth * c`  
-Notice that the **compare** instruction requires an arguement. The number of sloths after the `and` will determine which comparison should be made. See [Comparison Codes](#comparison-codes) for reference.
+
+> Notice that the **compare** instruction requires an argument. The number of sloths after the `and` will determine which comparison should be made. See [Comparison Codes](#comparison-codes) for reference.
 
 **Effect:** pops the first two values off the stack and pushes the truthiness of a comparison between them.  
 **Stack:** ``S, x, y -> S, 1 if true 0 if false``  
@@ -62,23 +63,25 @@ Notice that the **compare** instruction requires an arguement. The number of slo
   
 **Syntax:** `sloth * 7 and sloth * t`  
   
-The **input** instruction takes a type code to determine what kind of data is being read. See [Type Codes](#type-codes) for reference.
+> The **input** instruction takes a type code to determine what kind of data is being read. See [Type Codes](#type-codes) for reference.
 
 **Effect:** reads in either an integer or an ASCII character from standard in.  
 **Stack:** `S -> S, x`
 
 ### Output \<t>
   
-**Syntax:** `sloth * 8 and sloth * t`  
-The **output** instruction takes a type code to determine what kind of data is being displayed. See [Type Codes](#type-codes) for reference.
+**Syntax:** `sloth * 8 and sloth * t`
+
+> The **output** instruction takes a type code to determine what kind of data is being displayed. See [Type Codes](#type-codes) for reference.
 
 **Effect:** pops the top value off the stack and writes it to standard out.  
 **Stack:** `S, x -> S`  
 
 ### GOTO \<n>
   
-**Syntax:** `sloth * 9 and sloth * n`  
-The **GOTO** instruction takes a number of sloths as the destination if the result is true.
+**Syntax:** `sloth * 9 and sloth * n`
+
+> The **GOTO** instruction takes a number of sloths as the destination if the result is true.
 
 **Effect:** pops the top value off the stack, if the value is 1, the program counter is set to specified instruction, else continues as normal.  
 **Stack:** `S, x -> S`  
@@ -100,7 +103,7 @@ The **GOTO** instruction takes a number of sloths as the destination if the resu
 SlothLang relies on the translation of a number of sloths to a numeric code in order to perform specific operations. 
 
 ### Comparison Codes
-The compare function uses `<c>` sloths in order to select what kind of comparison is being made.
+The **Compare** function uses `<c>` sloths in order to select what kind of comparison is being made.
 
 | Comparison Code | Operation |
 |-----------------|-----------|
@@ -112,7 +115,7 @@ The compare function uses `<c>` sloths in order to select what kind of compariso
 | `0x06` | `x >= y` |
 
 ### Type Codes
-Type Codes `<t>` are used in the Input and Output instructions in order to determine what kind of data is being read or written.
+Type Codes `<t>` are used in the **Input** and **Output** instructions in order to determine what kind of data is being read or written.
 
 | Type Code | Type of I/O |
 |-----------|--------------------------|
