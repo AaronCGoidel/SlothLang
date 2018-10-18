@@ -17,7 +17,7 @@ SlothLang is parsed and executed in C.
 And of course the code behind the SlothLang VM itself is open source and can be found on [GitHub][slgit].
 
 ## Usage
-A Sloth program is parsed in new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurence of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
+A Sloth program is parsed in new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurrence of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
 
 Since a Sloth command is generally based on the number of times the word sloth appears in a row, the syntax will be documented as a multiplication. For example the documentation `sloth * 3` means `sloth sloth sloth` in Sloth code.
 
