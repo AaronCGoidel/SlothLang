@@ -1,12 +1,8 @@
 language: c
 
 os:
-- linux
-- osx
+  - linux
+  - osx
 
 script:
-- make test
-- ./slothTest
-- make cleanTest
-- make sloth
-- ./sloth Examples/HelloWorld.sloth
+  - ./ci.sh
