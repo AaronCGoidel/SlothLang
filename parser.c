@@ -20,6 +20,39 @@ void freeProgram(struct sloth_program* P){
   free(P);
 }
 
+//Read a line delimited by \n from file
+//Result is null terminated
+//If the line is blank result will be empty
+//If end of file is reached while reading a line, the last non null character
+//in the buffer will be -1. Or, if readline is called on a file that has been
+//read completely to the end, the buffer will be empty.
+char *readline(FILE *file){
+  //Default length of 100 characters - feel free to use a different value
+  const size_t default_len = 100;
+  char *line = malloc(sizeof(char) * default_len);
+  size_t len = default_len;
+  size_t currentChar = 0;
+  char c = '\0';
+
+  while(c != -1){
+    c = fgetc(file);
+    //Get more memory to hold the line if needed
+    if(currentChar == len){
+      len *= 2;
+      line = realloc(line, len);
+    }
+    if(c == '\n'){
+      break;
+    }
+
+    line[currentChar] = c;
+    currentChar++;
+  }
+
+  line[currentChar] = '\0';
+  return line;
+}
+
 struct sloth_program* parse(char* filepath){
   FILE* sFile;
 
