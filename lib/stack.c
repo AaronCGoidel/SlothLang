@@ -45,6 +45,15 @@ int spop(stack* S){
   return x;
 }
 
+int speek(stack* S, int n){
+  list* q = S->top;
+  while(q != S->bottom && n > 0){
+    n--;
+    q = q->next;
+  }
+  return q->data;
+}
+
 void sstack_free(stack* S){
   while(S->top != S->bottom){
     list* p = S->top;

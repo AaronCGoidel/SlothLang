@@ -175,6 +175,14 @@ int execute(struct sloth_program* sbin){
         pc++;
         break;
       }
+      case REACH: {
+        pc++;
+        int x = speek(S, P[pc]);
+        spush(S, x);
+
+        pc++;
+        break;
+      }
       default: {
         opErr("operation", P[pc]);
       }
