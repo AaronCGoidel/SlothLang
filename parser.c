@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 #include "slothvm.h"
 
@@ -24,8 +25,7 @@ void freeProgram(struct sloth_program* P){
 //Result is null terminated
 //If the line is blank result will be empty
 //If end of file is reached while reading a line, the last non null character
-//in the buffer will be -1. Or, if readline is called on a file that has been
-//read completely to the end, the buffer will be empty.
+//in the buffer will be -1.
 char *readline(FILE *file){
   //Default length of 100 characters - feel free to use a different value
   const size_t default_len = 100;
@@ -48,6 +48,10 @@ char *readline(FILE *file){
     line[currentChar] = c;
     currentChar++;
   }
+  if(c == -1){
+    line[currentChar] = -1;
+    currentChar++;
+  }
 
   line[currentChar] = '\0';
   return line;
@@ -66,47 +70,64 @@ struct sloth_program* parse(char* filepath){
   ubyte* byteCode = malloc(sizeof(char) * numCodes);
 
   char c = '\0';
-  int count = 0;
-  char cmd[6];
+  size_t count = 0;
+  char *line = 0x0;
+  size_t len = 0;
   size_t codeNum = 0;
   unsigned char currentCode = 0;
 
-  while(c != -1){
-    c = fgetc(sFile);
-    if(c == '#'){
-      while(c != '\n'){
-        c = fgetc(sFile);
-      }
-      fseek(sFile, -1, SEEK_CUR);
-    }else if(c == ' ' || c == '\n' || c == -1){
-      cmd[count] = '\0';
-      if(strcmp(cmd, "sloth") == 0){
-        currentCode++;
-      }else if(strcmp(cmd, "and") == 0){
-        byteCode[codeNum] = currentCode;
-        codeNum++;
-        currentCode = 0x00;
-      }else if(strcmp(cmd, "slothy") == 0){
-        byteCode[codeNum] = 0x01;
-        codeNum++;
-      }else if(strcmp(cmd, "nap") == 0){
-        currentCode = 0x00;
-      }
+  while(1){
+    count = 0;
+    currentCode = 0;
 
-      if(c != ' '){
-        byteCode[codeNum] = currentCode;
-        codeNum++;
-        currentCode = 0;
-      }
-      count = 0;
-    }else{
-      cmd[count] = c;
-      count++;
+    line = readline(sFile);
+    len = strlen(line);
+    //Make sure the line is okay
+    if(line[0] == -1){
+      break;
     }
+    if(len == 0){
+      continue;
+    }
+    
+    c = line[0];
+    while(c != 0 && c != -1 && count <= len){
+      if(c == '#'){
+        break;
+      }
+      if(isspace(c)){
+	count++;
+	c = line[count];
+	continue;
+      }
+      if(strncmp("slothy", line + count, 6) == 0){
+	byteCode[codeNum] = 0x1;
+	codeNum++;
+	count += 6;
+      } else if(strncmp("sloth", line + count, 5) == 0){
+	currentCode++;
+	count += 5;
+      }else if(strncmp("and", line + count, 3) == 0){
+	byteCode[codeNum] = currentCode;
+	codeNum++;
+	currentCode = 0;
+	count += 3;
+      }else if(strncmp("nap", line + count, 3) == 0){
+	byteCode[codeNum] = 0x0;
+	codeNum++;
+	count += 3;
+      }else{
+	count++;
+      }
+      c = line[count];
+    }
+    byteCode[codeNum] = currentCode;
+    codeNum++;
+    free(line);
   }
-  // for(int i = 0; i < numCodes; i++){
-  //   printf("%x\n", byteCode[i]);
-  // }
+//for(int i = 0; i < numCodes; i++){
+//printf("%x\n", byteCode[i]);
+//  }
 
   struct sloth_program* S = malloc(sizeof(struct sloth_program));
   S->codes = byteCode;
