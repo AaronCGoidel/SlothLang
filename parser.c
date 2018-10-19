@@ -84,9 +84,11 @@ struct sloth_program* parse(char* filepath){
     len = strlen(line);
     //Make sure the line is okay
     if(line[0] == -1){
+      free(line);
       break;
     }
     if(len == 0){
+      free(line);
       continue;
     }
     
