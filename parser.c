@@ -22,7 +22,8 @@ void freeProgram(struct sloth_program* P){
 }
 
 //Read a line delimited by \n from file
-//Result is null terminated
+//Allocates a null terminated buffer to hold the line.
+//Caller is responsible for freeing it.
 //If the line is blank result will be empty
 //If end of file is reached while reading a line, the last non null character
 //in the buffer will be -1.
@@ -48,6 +49,7 @@ char *readline(FILE *file){
     line[currentChar] = c;
     currentChar++;
   }
+  //If at end of file put EOF in buffer
   if(c == -1){
     line[currentChar] = -1;
     currentChar++;
@@ -70,7 +72,7 @@ struct sloth_program* parse(char* filepath){
   ubyte* byteCode = malloc(sizeof(char) * numCodes);
 
   char c = '\0';
-  size_t count = 0;
+  size_t count = 0;//Current position in line
   char *line = 0x0;
   size_t len = 0;
   size_t codeNum = 0;
@@ -97,11 +99,7 @@ struct sloth_program* parse(char* filepath){
       if(c == '#'){
         break;
       }
-      if(isspace(c)){
-	count++;
-	c = line[count];
-	continue;
-      }
+      //Check keywords
       if(strncmp("slothy", line + count, 6) == 0){
 	byteCode[codeNum] = 0x1;
 	codeNum++;
@@ -119,6 +117,7 @@ struct sloth_program* parse(char* filepath){
 	codeNum++;
 	count += 3;
       }else{
+	//Ignore any other characters
 	count++;
       }
       c = line[count];
