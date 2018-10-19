@@ -107,7 +107,8 @@ int execute(struct sloth_program* sbin){
         switch(P[pc]){
           case INT: {
             int x;
-            scanf(">%d", &x);
+            printf(">");
+            scanf("%d", &x);
             spush(S, x);
             break;
           }
