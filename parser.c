@@ -77,6 +77,7 @@ struct sloth_program* parse(char* filepath){
   size_t len = 0;
   size_t codeNum = 0;
   unsigned char currentCode = 0;
+  char hadToken = 0;
 
   while(1){
     count = 0;
@@ -95,35 +96,40 @@ struct sloth_program* parse(char* filepath){
     }
     
     c = line[0];
-    while(c != 0 && c != -1 && count <= len){
-      if(c == '#'){
-        break;
-      }
+    while(c != 0 && c != -1 && c != '#' && count <= len){
       //Check keywords
       if(strncmp("slothy", line + count, 6) == 0){
 	byteCode[codeNum] = 0x1;
 	codeNum++;
 	count += 6;
+  hadToken = 1;
       } else if(strncmp("sloth", line + count, 5) == 0){
 	currentCode++;
 	count += 5;
+  hadToken = 1;
       }else if(strncmp("and", line + count, 3) == 0){
 	byteCode[codeNum] = currentCode;
 	codeNum++;
 	currentCode = 0;
 	count += 3;
+  hadToken = 1;
       }else if(strncmp("nap", line + count, 3) == 0){
 	byteCode[codeNum] = 0x0;
 	codeNum++;
 	count += 3;
+  hadToken = 1;
       }else{
 	//Ignore any other characters
 	count++;
       }
       c = line[count];
     }
+
+    if(hadToken){
     byteCode[codeNum] = currentCode;
     codeNum++;
+    hadToken = 0;
+    }
     free(line);
   }
 //for(int i = 0; i < numCodes; i++){
