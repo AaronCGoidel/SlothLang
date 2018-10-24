@@ -1,19 +1,27 @@
-slothy sloth sloth sloth
-slothy sloth sloth sloth
-slothy sloth sloth
-slothy sloth sloth
-slothy sloth sloth
-sloth sloth sloth sloth
-sloth sloth sloth sloth
-sloth sloth sloth sloth
-sloth sloth sloth sloth
-sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+# prints "Hello World" to the console
+
+# First we need to print 'H' (ascii value 72)
+slothy sloth sloth sloth # push 3 
+slothy sloth sloth sloth # push 3
+slothy sloth sloth # push 2
+slothy sloth sloth # push 2
+slothy sloth sloth # push 2
+sloth sloth sloth sloth # 2 * 2
+sloth sloth sloth sloth # 4 * 2
+sloth sloth sloth sloth # 8 * 3
+sloth sloth sloth sloth # 24 * 3 = 72
+sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth # print char of 72 ('H')
+
+# Print 'e' (101)
+# Arithmatic to get 101 onto stack
 slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth
 sloth sloth sloth sloth
 slothy sloth
 sloth sloth
-sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth # print 101 as char ('e')
+
+# Print 'l' (108) twice
 slothy sloth sloth
 slothy sloth sloth
 slothy sloth sloth sloth
@@ -34,6 +42,8 @@ sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'o' (111)
 slothy sloth sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth
 slothy sloth sloth
@@ -44,12 +54,16 @@ sloth sloth
 slothy sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print ' ' (32)
 slothy sloth sloth sloth sloth
 slothy sloth sloth sloth sloth
 slothy sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'W' (87)
 slothy sloth sloth sloth
 slothy sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth
@@ -58,6 +72,8 @@ slothy sloth
 sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'o' (111)
 slothy sloth sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth
 slothy sloth sloth
@@ -68,6 +84,8 @@ sloth sloth
 slothy sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'r' (114)
 slothy sloth sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth
 slothy sloth sloth
@@ -80,6 +98,8 @@ sloth sloth sloth sloth
 slothy sloth sloth sloth
 sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'l' (108)
 slothy sloth sloth
 slothy sloth sloth
 slothy sloth sloth sloth
@@ -90,10 +110,14 @@ sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print 'd' (100)
 slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth
 slothy sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth
 sloth sloth sloth sloth
 sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+# Print '\n' (10)
 slothy sloth sloth sloth sloth sloth
 slothy sloth sloth
 sloth sloth sloth sloth
