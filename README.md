@@ -17,11 +17,13 @@ SlothLang is parsed and executed in C.
 And of course the code behind the SlothLang VM itself is open source and can be found on [GitHub][slgit].
 
 ## Usage
-A Sloth program is parsed in new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurrence of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
+A Sloth program is parsed as new-line deliminated instructions. Every line starts a new instruction at ```0x00```. Each occurrence of the word `sloth` on a line increases the instruction code by one. At the end of each line the resulting instruction code is pushed and the next line is read. 
 
 Since a Sloth command is generally based on the number of times the word sloth appears in a row, the syntax will be documented as a multiplication. For example the documentation `sloth * 3` means `sloth sloth sloth` in Sloth code.
 
-To save time and effort, there are a few commands which do not follow the scheme outlined above. These will be outlined below. Note: the `and` operator is used to separate arguments.
+To save time and effort, there are a few commands which do not follow the scheme outlined above. These will be outlined below. 
+
+Note: the `and` operator is used to separate arguments.
 
 # Syntax and Effects
 ### Exit
@@ -107,37 +109,37 @@ The **Compare** function uses `<c>` sloths in order to select what kind of compa
 
 | Comparison Code | Operation |
 |-----------------|-----------|
-| `0x01` | `x == y` |
-| `0x02` | `x != y` |
-| `0x03` | `x < y` |
-| `0x04` | `x <= y` |
-| `0x05` | `x > y` |
-| `0x06` | `x >= y` |
+| `0x01`          | `x == y`  |
+| `0x02`          | `x != y`  |
+| `0x03`          | `x < y`   |
+| `0x04`          | `x <= y`  |
+| `0x05`          | `x > y`   |
+| `0x06`          | `x >= y`  |
 
 ### Type Codes
 Type Codes `<t>` are used in the **Input** and **Output** instructions in order to determine what kind of data is being read or written.
 
-| Type Code | Type of I/O |
+| Type Code | Type of I/O              |
 |-----------|--------------------------|
-| `0x01` | A signed integer value |
-| `0x02` | A single ASCII character |
+| `0x01`    | A signed integer value   |
+| `0x02`    | A single ASCII character |
 
 ### Operation Codes
 Sloth code is read in by the SlothVM as bytecode. The following is the bytecode for each SlothLang instruction.
 
-| Byte Code | Name |
-|-----------|-------------|
-| `0x00` | Exit |
-| `0x01` | Push \<i> |
-| `0x02` | Add |
-| `0x03` | Subtract |
-| `0x04` | Multiply |
-| `0x05` | Divide |
-| `0x06` | Compare \<c> |
-| `0x07` | Input \<t> |
-| `0x08` | Output \<t> |
-| `0x09` | GOTO \<o> |
-| `0x0A` | DUP |
+| Byte Code | Name         |
+|-----------|--------------|
+| `0x00`    | Exit         |
+| `0x01`    | Push \<i>    |
+| `0x02`    | Add          |
+| `0x03`    | Subtract     |
+| `0x04`    | Multiply     |
+| `0x05`    | Divide       |
+| `0x06`    | Compare \<c> |
+| `0x07`    | Input \<t>   |
+| `0x08`    | Output \<t>  |
+| `0x09`    | GOTO \<o>    |
+| `0x0A`    | DUP          |
 
 ## License
 
