@@ -1,0 +1,54 @@
+#A sloth program that generates all the bytecode instructions used by the vm
+#Goto
+slothy sloth
+sloth sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+#Arithmetic
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth #add
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth #subtract
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth #multiply
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth #divide
+
+#Comparisons
+# ==
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth #true (1)
+# !=
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth sloth #false (0)
+# <
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth sloth sloth #false
+# <=
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth sloth sloth sloth #true
+# >
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth sloth sloth sloth sloth #false
+# >=
+slothy sloth sloth
+slothy sloth sloth
+sloth sloth sloth sloth sloth sloth and sloth sloth sloth sloth sloth sloth #true
+
+#I/O
+#sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+#sloth sloth sloth sloth sloth sloth sloth and sloth
+sloth sloth sloth sloth sloth sloth sloth sloth and sloth
+sloth sloth sloth sloth sloth sloth sloth sloth and sloth sloth
+
+#Duplicate
+sloth sloth sloth sloth sloth sloth sloth sloth sloth sloth 
+
+nap
