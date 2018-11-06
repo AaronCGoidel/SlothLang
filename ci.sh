@@ -20,5 +20,10 @@ echo "Running examples..."
 for file in ./Examples/*.sloth; do
 	echo ""
 	echo "--- Example: $file"
-	./sloth "$file"
+	if [[ -f "$file.stdin" ]]; then
+		echo "[using $file.stdin]"
+		./sloth "$file" <"$file.stdin"
+	else
+		./sloth "$file"
+	fi
 done
