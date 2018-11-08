@@ -13,3 +13,5 @@ This prints `Hello, World!`.
 
 This prints all the natural numbers from 1 to 10. It then returns 11.
 
+## EvenOdd
+Takes an integer from the user and determines whether that number is even or odd.
