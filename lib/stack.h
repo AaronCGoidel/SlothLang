@@ -14,5 +14,9 @@ bool sstack_empty(sstack_t S);
 
 int spop(sstack_t S);
 
+int speek(sstack_t S, int pos);
+
+void sprint(sstack_t S);
+
 void sstack_free(sstack_t S);
 #endif
