@@ -2,7 +2,7 @@
 
 These are some example programs demonstrating how Sloth works.
 
-All of these are run in SlothLang's extensive test suite--each program is interpreted, and if it crashes horrendusly, the tests fail.
+All of these are run in SlothLang's extensive test suite--each program is interpreted, and if it crashes horrendously, the tests fail.
 
 
 ## HelloWorld
